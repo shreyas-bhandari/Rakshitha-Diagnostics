@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rakshitha-diagnostics-b2.vercel.app/sitemap.xml

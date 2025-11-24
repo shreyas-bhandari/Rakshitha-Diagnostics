@@ -1,9 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Clock, MapPin, Menu, X, Microscope, Heart, FlaskConical, User, Home, ChevronRight, Star, Award, Shield } from 'lucide-react';
+import SEO from './components/SEO';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Rakshitha Diagnostics",
+    "image": "https://rakshitha-diagnostics-b2.vercel.app/vite.svg",
+    "url": "https://rakshitha-diagnostics-b2.vercel.app/",
+    "telephone": "+919901635538",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Manipal",
+      "addressLocality": "Manipal",
+      "addressRegion": "Karnataka",
+      "postalCode": "576104",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 13.3409,
+      "longitude": 74.7421
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "07:00",
+      "closes": "21:00"
+    },
+    "sameAs": []
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,6 +123,16 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50">
+      <SEO
+        title="Rakshitha Diagnostics - Blood Checkup & Lab in Manipal"
+        description="Best diagnostic center in Manipal offering blood checkups, lab tests, and health packages. Accurate results and home collection available."
+        name="Rakshitha Diagnostics"
+        type="website"
+        keywords="blood cheakup in manipal, diognastics in manipal, blood lab in manipal, health checkup manipal, pathology lab manipal"
+      />
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
       {/* Navigation */}
       <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/80 backdrop-blur-sm'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
