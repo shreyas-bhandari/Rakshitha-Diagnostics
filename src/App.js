@@ -236,7 +236,7 @@ function App() {
                     <CheckCircle className="text-green-600" size={32} />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-gray-800">10+ Years</p>
+                    <p className="text-2xl font-bold text-gray-800">20+ Years</p>
                     <p className="text-sm text-gray-600">Trusted Service</p>
                   </div>
                 </div>
@@ -435,7 +435,7 @@ function App() {
                 </div>
                 <h4 className="text-3xl font-bold mb-6">Visit Us</h4>
                 <div className="space-y-2 mb-6">
-                  <p className="text-xl font-semibold">Tiger Circle, Kukkikatte</p>
+                  <p className="text-xl font-semibold">Image Tower, Kukkikatte</p>
                   <p className="text-xl">Udupi District, Karnataka</p>
                 </div>
                 <a 
@@ -467,7 +467,7 @@ function App() {
             Kukkikatte Branch
           </div>
           <p className="text-gray-400 mb-3">NABL & ISO Certified Laboratory</p>
-          <p className="text-gray-400 mb-3">Tiger Circle, Kukkikatte • Udupi District</p>
+          <p className="text-gray-400 mb-3">Image Tower, Kukkikatte • Udupi District</p>
           <div className="flex justify-center space-x-6 mb-8">
             <a href="tel:9448202999" className="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center hover:bg-teal-700 transition">
               <Phone size={20} />
