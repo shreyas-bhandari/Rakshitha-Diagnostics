@@ -85,20 +85,20 @@ function App() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Top Info Bar */}
       <div className="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-2">
-        <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-between items-center text-sm">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:flex-wrap justify-between items-center text-xs md:text-sm gap-y-1">
           <div className="flex items-center space-x-4">
             <span className="flex items-center space-x-1">
-              <Phone size={14} />
+              <Phone size={12} className="md:w-3.5 md:h-3.5" />
               <span>9448202999</span>
             </span>
             <span className="hidden md:inline">|</span>
             <span className="hidden md:flex items-center space-x-1">
-              <Clock size={14} />
+              <Clock size={12} className="md:w-3.5 md:h-3.5" />
               <span>Mon-Sat: 7AM-6:30PM | Sun: 7AM-1PM</span>
             </span>
           </div>
           <div className="flex items-center space-x-2">
-            <CheckCircle size={14} />
+            <CheckCircle size={12} className="md:w-3.5 md:h-3.5" />
             <span className="font-semibold">NABL & ISO Certified</span>
           </div>
         </div>
@@ -107,14 +107,14 @@ function App() {
       {/* Navigation */}
       <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center space-x-4">
-              <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                <Microscope className="text-white" size={28} strokeWidth={2.5} />
+          <div className="flex justify-between items-center h-16 md:h-20">
+            <div className="flex items-center space-x-3 md:space-x-4">
+              <div className="w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                <Microscope className="text-white w-6 h-6 md:w-7 md:h-7" strokeWidth={2.5} />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-800">Rakshitha Diagnostics</h1>
-                <p className="text-xs text-teal-600 font-semibold">Kukkikatte Branch • NABL Certified</p>
+                <h1 className="text-lg md:text-2xl font-bold text-gray-800 leading-tight">Rakshitha Diagnostics</h1>
+                <p className="text-[10px] md:text-xs text-teal-600 font-semibold">Kukkikatte Branch • NABL Certified</p>
               </div>
             </div>
             
@@ -194,28 +194,28 @@ function App() {
                 <MapPin size={16} />
                 <span>Kukkikatte Branch - Now Open</span>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 leading-tight">
-                Best <span className="text-teal-600">Diagnostics Center</span> in Manipal & Udupi
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 leading-tight">
+                Best <span className="text-teal-600">Diagnostics Center</span><br className="hidden md:block" /> in Manipal & Udupi
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
                 Top-rated blood test lab and health clinic providing accurate test results, pathology services, and home sample collection.
               </p>
               
-              <div className="flex flex-wrap gap-4 mb-8">
+              <div className="flex flex-wrap gap-3 md:gap-4 mb-8">
                 {trustBadges.map((badge, idx) => (
-                  <div key={idx} className="flex items-center space-x-2 bg-white px-4 py-3 rounded-lg shadow-md border border-gray-200">
-                    <badge.icon className={badge.color} size={20} />
-                    <span className="text-gray-700 font-semibold text-sm">{badge.text}</span>
+                  <div key={idx} className="flex items-center space-x-2 bg-white px-3 py-2 md:px-4 md:py-3 rounded-lg shadow-md border border-gray-200 text-sm md:text-base flex-grow sm:flex-grow-0 justify-center">
+                    <badge.icon className={badge.color} size={18} />
+                    <span className="text-gray-700 font-semibold">{badge.text}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-wrap gap-4">
-                <a href="tel:9448202999" className="inline-flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-blue-600 text-white px-8 py-4 rounded-lg hover:shadow-xl transition font-semibold text-lg">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="tel:9448202999" className="w-full sm:w-auto justify-center inline-flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-blue-600 text-white px-8 py-4 rounded-lg hover:shadow-xl transition font-semibold text-lg">
                   <Phone size={22} />
                   <span>Call Now</span>
                 </a>
-                <a href="#packages" className="inline-flex items-center space-x-2 bg-white text-teal-600 px-8 py-4 rounded-lg hover:shadow-xl transition font-semibold text-lg border-2 border-teal-600">
+                <a href="#packages" className="w-full sm:w-auto justify-center inline-flex items-center space-x-2 bg-white text-teal-600 px-8 py-4 rounded-lg hover:shadow-xl transition font-semibold text-lg border-2 border-teal-600">
                   <span>View Packages</span>
                   <ChevronRight size={22} />
                 </a>
@@ -249,7 +249,7 @@ function App() {
       {/* Stats Bar */}
       <section className="py-12 bg-gradient-to-r from-teal-600 to-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 text-center">
             {[
               { value: '4.9★', label: 'Customer Rating' },
               { value: '1,200+', label: 'Happy Patients' },
@@ -257,9 +257,9 @@ function App() {
               { value: '10+', label: 'Years Experience' },
               { value: '24/7', label: 'Report Access' }
             ].map((stat, idx) => (
-              <div key={idx}>
-                <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                <p className="text-teal-100 font-medium">{stat.label}</p>
+              <div key={idx} className={idx === 4 ? "col-span-2 md:col-span-1" : ""}>
+                <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
+                <p className="text-sm md:text-base text-teal-100 font-medium">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -488,18 +488,18 @@ function App() {
       {/* Floating Action Buttons */}
       <a 
         href="tel:9448202999"
-        className="fixed bottom-8 right-8 z-50 w-16 h-16 bg-gradient-to-br from-teal-600 to-blue-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition"
+        className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-teal-600 to-blue-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition"
       >
-        <Phone className="text-white" size={28} />
+        <Phone className="text-white w-6 h-6 md:w-7 md:h-7" />
       </a>
 
       <a 
         href="https://maps.app.goo.gl/RMAqhdvkFWm49aUN7"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-28 right-8 z-50 w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition"
+        className="fixed bottom-20 right-4 md:bottom-28 md:right-8 z-50 w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition"
       >
-        <Navigation className="text-white" size={28} />
+        <Navigation className="text-white w-6 h-6 md:w-7 md:h-7" />
       </a>
     </div>
   );
